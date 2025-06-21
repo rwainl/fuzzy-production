@@ -19,23 +19,29 @@ const useDataC = () => {
     ]);
   };
 
-  const getDMin = (dLow, dHigh, dPred) => {
-    if (dPred >= dLow && dPred <= dHigh) {
-        return (dHigh - dPred)/(dHigh-dLow);
-    } else if (dPred > dLow) {
+  const getDMin = () => {
+    const valueDMin = data.map((item) => {
+      if (item.dPred >= item.dLow && item.dPred <= item.dHigh) {
+        return (item.dHigh - item.dPred) / (item.dHigh - item.dLow);
+      } else if (item.dPred > item.dLow) {
         return 1;
-    } else {
+      } else {
         return 0;
-    }
+      }
+    });
+    return valueDMin;
   };
-  const getDMax = (dLow, dHigh, dPred) => {
-    if (dPred >= dLow && dPred <= dHigh) {
-        return (dPred - dLow)/(dHigh-dLow);
-    } else if (dPred > dLow) {
+  const getDMax = () => {
+    const valueDMax = data.map((item) => {
+      if (item.dPred >= item.dLow && item.dPred <= item.dHigh) {
+        return (item.dPred - item.dLow) / (item.dHigh - item.dLow);
+      } else if (item.dPred > item.dLow) {
         return 0;
-    } else {
+      } else {
         return 1;
-    }
+      }
+    });
+    return valueDMax;
   };
 
   return {
