@@ -6,8 +6,8 @@ function Result({ data, dMin, dMax }) {
       {data.map((item, index) => (
         <>
           <div className="" key={index}>
-            <p>D Min : {dMin(item.dLow, item.dHigh, item.dPred)}</p>
-            <p>D Max : {dMax(item.dLow, item.dHigh, item.dPred)}</p>
+            <p key={index}>D Min : {dMin(item.dLow, item.dHigh, item.dPred)}</p>
+            <p key={index}>D Max : {dMax(item.dLow, item.dHigh, item.dPred)}</p>
           </div>
         </>
       ))}
