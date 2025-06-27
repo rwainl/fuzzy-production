@@ -33,7 +33,7 @@ function Form({ onAdd }) {
         values.pLow,
         values.pHigh,
         values.dPred,
-        values.sPred,
+        values.sPred
       );
       resetForm();
     },
@@ -41,146 +41,164 @@ function Form({ onAdd }) {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto mt-6 border rounded-lg px-6 py-4 flex flex-col">
-        <form onSubmit={formik.handleSubmit}>
-          <h1 className="text-lg font-semibold mb-4 mt-4">Input Data</h1>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 sm:grid-cols-2">
-            <div className="flex flex-col border rounded-lg px-4 py-4 shadow-lg">
-              <label htmlFor="" className="mb-2">
+      <div className="max-w-6xl mx-auto mt-6 px-4 py-6">
+        <form onSubmit={formik.handleSubmit} className="space-y-10">
+          <h1 className="text-2xl font-bold text-purple-700 mb-6">
+            Input Data
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
+            <div className="flex flex-col bg-purple-50 border border-purple-200 rounded-xl px-6 py-4 shadow-sm">
+              <label htmlFor="" className="text-purple-700 font-semibold mb-2">
                 Permintaan
               </label>
               <input
                 name="dLow"
                 type="number"
                 placeholder="Minimal"
-                className="border rounded-lg py-2 px-2 mr-4 mb-4"
+                className="border border-purple-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-4"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.usia}
+                value={formik.values.dLow}
               />
               <input
                 name="dHigh"
                 type="number"
                 placeholder="Maksimal"
-                className="border rounded-lg py-2 px-2 mr-4 mb-4"
+                className="border border-purple-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-2"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.usia}
+                value={formik.values.dHigh}
               />
               {(formik.touched.dLow && formik.errors.dLow) ||
               (formik.touched.dHigh && formik.errors.dHigh) ? (
                 <>
-                  <p className="text-red-400 text-sm">{formik.errors.dLow}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {formik.errors.dLow}
+                  </p>
                 </>
               ) : null}
             </div>
-            <div className="flex flex-col border rounded-lg px-4 py-4 shadow-lg">
-              <label htmlFor="" className="mb-2">
+            <div className="flex flex-col bg-purple-50 border border-purple-200 rounded-xl px-6 py-4 shadow-sm">
+              <label htmlFor="" className="text-purple-700 font-semibold mb-2">
                 Persediaan
               </label>
               <input
                 name="sLow"
                 type="number"
                 placeholder="Minimal"
-                className="border rounded-lg py-2 px-2 mr-4 mb-4"
+                className="border border-purple-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-4"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.beratBadan}
+                value={formik.values.sLow}
               />
               <input
                 name="sHigh"
                 type="number"
                 placeholder="Maksimal"
-                className="border rounded-lg py-2 px-2 mr-4 mb-4"
+                className="border border-purple-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-2"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.beratBadan}
+                value={formik.values.sHigh}
               />
               {(formik.touched.sLow && formik.errors.sLow) ||
               (formik.touched.sHigh && formik.errors.sHigh) ? (
                 <>
-                  <p className="text-red-400 text-sm">{formik.errors.sLow}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {formik.errors.sLow}
+                  </p>
                 </>
               ) : null}
             </div>
-            <div className="flex flex-col border rounded-lg px-4 py-4 shadow-lg">
-              <label htmlFor="" className="mb-2">
+            <div className="flex flex-col bg-purple-50 border border-purple-200 rounded-xl px-6 py-4 shadow-sm">
+              <label htmlFor="" className="text-purple-700 font-semibold mb-2">
                 Produksi
               </label>
               <input
                 name="pLow"
                 type="number"
                 placeholder="Minimal"
-                className="border rounded-lg py-2 px-2 mr-4 mb-4"
+                className="border border-purple-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-4"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.tinggiBadan}
+                value={formik.values.pLow}
               />
               <input
                 name="pHigh"
                 type="number"
                 placeholder="Maksimal"
-                className="border rounded-lg py-2 px-2 mr-4 mb-4"
+                className="border border-purple-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-2"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.tinggiBadan}
+                value={formik.values.pHigh}
               />
               {(formik.touched.pLow && formik.errors.pLow) ||
               (formik.touched.pHigh && formik.errors.pHigh) ? (
                 <>
-                  <p className="text-red-400 text-sm">{formik.errors.pLow}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {formik.errors.pLow}
+                  </p>
                 </>
               ) : null}
             </div>
           </div>
-          <h1 className="text-lg mt-6 font-semibold mb-4">Data yang akan diprediksi</h1>
-          <div className="grid grid-cols-1 gap-3 mt-6 md:grid-cols-2 sm:grid-cols-2">
-            <div className="flex flex-col border rounded-lg px-4 py-4 shadow-lg">
-              <label htmlFor="" className="mb-2">
+          <h1 className="text-2xl font-bold text-purple-700 mt-10">
+            Data yang akan diprediksi
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 gap-6">
+            <div className="flex flex-col bg-purple-50 border border-purple-200 rounded-xl px-6 py-4 shadow-sm">
+              <label htmlFor="" className="text-purple-700 font-semibold mb-2 ">
                 Permintaan
               </label>
               <input
                 name="dPred"
                 type="number"
                 placeholder="Permintaan Prediksi"
-                className="border rounded-lg py-2 px-2 mr-4 mb-4"
+                className="border border-purple-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-2"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.usia}
+                value={formik.values.dPred}
               />
               {formik.touched.dPred && formik.errors.dPred ? (
                 <>
-                  <p className="text-red-400 text-sm">{formik.errors.dPred}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {formik.errors.dPred}
+                  </p>
                 </>
               ) : null}
             </div>
-            <div className="flex flex-col border rounded-lg px-4 py-4 shadow-lg">
-              <label htmlFor="" className="mb-2">
+            <div className="flex flex-col bg-purple-50 border border-purple-200 rounded-xl px-6 py-4 shadow-sm">
+              <label htmlFor="" className="text-purple-700 font-semibold mb-2">
                 Persediaan
               </label>
               <input
                 name="sPred"
                 type="number"
                 placeholder="Stock Prediksi"
-                className="border rounded-lg py-2 px-2 mr-4 mb-4"
+                className="border border-purple-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-2"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.usia}
+                value={formik.values.sPred}
               />
               {formik.touched.sPred && formik.errors.sPred ? (
                 <>
-                  <p className="text-red-400 text-sm">{formik.errors.sPred}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {formik.errors.sPred}
+                  </p>
                 </>
               ) : null}
             </div>
           </div>
-          <button
-            type="submit"
-            className="border rounded-lg shadow-lg py-2 px-2 mt-4 self-end"
-            disabled={(!formik.isValid && formik.dirty) || formik.isSubmitting}
-          >
-            Check
-          </button>
+          <div className="flex justify-end mt-6">
+            <button
+              type="submit"
+              className="bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-md py-2 px-6 transition duration-300 shadow-md disabled:opacity-50"
+              disabled={
+                (!formik.isValid && formik.dirty) || formik.isSubmitting
+              }
+            >
+              Check
+            </button>
+          </div>
         </form>
       </div>
     </>
