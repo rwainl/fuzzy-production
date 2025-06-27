@@ -67,7 +67,7 @@ function ShowResult({ item }) {
         <div className="">
           <h1 className="text-xl font-bold text-gray-800 mb-3">Persediaan</h1>
           <div className="flex flex-col md:flex-row md:justify-between md:items-start bg-gray-50 border border-gray-200 rounded-lg p-4">
-            <div className="w-svw md:w-[470px]">
+            <div className="w-full overflow-x-auto md:w-[470px]">
               <LineChart width={470} height={250} data={item.supplyGraph}>
                 <XAxis dataKey="x" />
                 <YAxis domain={[0, 1]} />
