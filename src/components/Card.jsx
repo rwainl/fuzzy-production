@@ -16,9 +16,14 @@ function Card() {
           Prediksi Total Produksi
         </h1>
         <p className="text-gray-700 mt-4 text-justify">
-          Masukkan variabel dibawah sesuai untuk memprediksi total produksi
-          dengan menggunakan logika fuzzy. Sistem akan memproses data dan
-          menampilkan prediksi.
+          Website ini dirancang untuk memprediksi total produksi menggunakan
+          logika fuzzy. Anda cukup mengisi data permintaan dan persediaan, baik
+          nilai minimum, maksimum, maupun nilai yang ingin diprediksi. Sistem
+          akan melakukan fuzzifikasi, menerapkan aturan fuzzy (rule base),
+          menghitung hasil implikasi, dan menentukan nilai prediksi produksi
+          melalui metode defuzzifikasi. Hasil prediksi akan ditampilkan secara
+          interaktif untuk membantu pengambilan keputusan produksi yang lebih
+          tepat.
         </p>
       </div>
     </>
