@@ -69,14 +69,19 @@ Build fuzzy-production from the source and install dependencies:
     ```
 
 3. **Instal dependencies**
+
     Using npm:
+    
     ```bash
     npm install
     ```
 
 4. **Usage**
+    
     Run the project with:
+    
     using `npm`:
+
     ```bash
     npm run dev
     ```
