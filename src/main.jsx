@@ -14,8 +14,8 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<App />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </ToastProvider>
     </BrowserRouter>
